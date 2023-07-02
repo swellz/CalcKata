@@ -5,7 +5,7 @@ public class Main {
     static String [] romans = {"I","II","III","IV","V","VI","VII","VIII","IX","X"};
     static Character[] operations ={'+','-','/','*'};
     public static void main(String[] args) throws IOException {
-        String input = null;
+        String input;
         out.print("Введите операцию -> ");
         Scanner in = new Scanner(System.in);
         input = in.nextLine();
@@ -54,20 +54,11 @@ public class Main {
             {
                 throw  new IOException("Используются одновременно разные системы счисления");
             }
-            switch (i)
-            {
-                case 0:
-                    result = numb1+numb2;
-                    break;
-                case 1:
-                    result = numb1-numb2;
-                    break;
-                case 2:
-                    result = numb1/numb2;
-                    break;
-                case 3:
-                    result = numb1*numb2;
-                    break;
+            switch (i) {
+                case 0 -> result = numb1 + numb2;
+                case 1 -> result = numb1 - numb2;
+                case 2 -> result = numb1 / numb2;
+                case 3 -> result = numb1 * numb2;
             }
         }
         else
@@ -83,7 +74,7 @@ public class Main {
         return Integer.toString(result);
     }
 
-    public static String toRoman (Integer numberInt)throws IOException {
+    public static String toRoman (Integer numberInt) {
         String numberString = numberInt.toString();
         String romanNumber = "";
         if (numberInt > 10)
