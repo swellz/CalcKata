@@ -1,12 +1,5 @@
-import java.beans.PropertyEditorSupport;
-import java.io.IOError;
 import java.io.IOException;
-import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
 import java.util.Scanner;
-
 import static java.lang.System.*;
 public class Main {
     static String [] romans = {"I","II","III","IV","V","VI","VII","VIII","IX","X"};
@@ -21,11 +14,11 @@ public class Main {
     }
     public static String calc (String input)throws IOException
     {
-        Boolean firstIsRoman = false;
-        Boolean secondIsRoman = false;
-        Integer numb1 = 0;
-        Integer numb2 = 0;
-        Integer result = 0;
+        boolean firstIsRoman = false;
+        boolean secondIsRoman = false;
+        int numb1 = 0;
+        int numb2 = 0;
+        int result = 0;
         int pos = -1;
         int i=-1;
         while (pos ==-1&& i<4)
@@ -87,7 +80,7 @@ public class Main {
         {
             throw  new IOException("D римской системе нет отрицательных чисел и нуля");
         }
-        return result.toString();
+        return Integer.toString(result);
     }
 
     public static String toRoman (Integer numberInt)throws IOException {
@@ -95,7 +88,7 @@ public class Main {
         String romanNumber = "";
         if (numberInt > 10)
         {
-            Integer firstDigit = Integer.parseInt(numberString.substring(0, 1));
+            int firstDigit = Integer.parseInt(numberString.substring(0, 1));
             String secondDigit = numberString.substring(1);
             if (numberInt < 50)
             {
